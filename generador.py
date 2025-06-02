@@ -9,7 +9,7 @@ def generateUrl(lugar1,lugar2,token):
     return f'https://api.mapbox.com/directions/v5/mapbox/driving/{lugar1["longitud"]},{lugar1["latitud"]};{lugar2["longitud"]},{lugar2["latitud"]}?geometries=geojson&access_token={token}'
 def main():
     load_dotenv()
-    cred = credentials.Certificate("chugchimap-firebase-adminsdk-fbsvc-0706c5e530.json")
+    cred = credentials.Certificate("credenciales.json")
     firebase_admin.initialize_app(cred)
     db = firestore.client()
     token = os.getenv("MAPBOX_TOKEN")  
